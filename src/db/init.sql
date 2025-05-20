@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS productos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(255),
+  categoria VARCHAR(100),
+  precio DECIMAL(10,2),
+  fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
