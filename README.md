@@ -9,7 +9,6 @@ El propósito principal es servir como herramienta de aprendizaje y demostració
 ## ¿Para qué sirve este proyecto?
 
 - **Aprendizaje práctico**: Permite experimentar con técnicas de manejo de grandes volúmenes de datos
-- **Preparación para entrevistas**: Demuestra conocimientos en desarrollo backend, bases de datos y optimización
 - **Demostración de habilidades**: Muestra capacidad para implementar soluciones escalables y eficientes
 - **Experimentación**: Sirve como base para probar diferentes estrategias de consulta y optimización
 
@@ -298,6 +297,42 @@ Puedes probar los endpoints usando un navegador, Postman o curl:
 ```bash
 curl http://localhost:3000/productos?page=1&limit=10
 ```
+
+### 4. Conectarse a MySQL para ejecutar consultas
+
+Para conectarte directamente a la base de datos y ejecutar consultas SQL:
+
+1. **Conectarte a MySQL**:
+   ```bash
+   mysql -u root -p
+   ```
+   Cuando te pida la contraseña, presiona Enter (si no configuraste una contraseña).
+
+2. **Seleccionar la base de datos**:
+   ```sql
+   USE bigdata_db;
+   ```
+
+3. **Verificar la conexión**:
+   ```sql
+   SELECT DATABASE();
+   ```
+   Debería mostrar `bigdata_db`.
+
+4. **Ejecutar consultas**:
+   Ahora puedes ejecutar cualquier consulta SQL, por ejemplo:
+   ```sql
+   SELECT categoria, COUNT(*) as total_productos 
+   FROM productos 
+   GROUP BY categoria 
+   ORDER BY total_productos DESC;
+   ```
+
+5. **Alternativa: conectar directamente a la base de datos**:
+   ```bash
+   mysql -u root -p bigdata_db
+   ```
+   Esto te conecta directamente sin necesidad del comando `USE`.
 
 ## Tecnologías Utilizadas
 
